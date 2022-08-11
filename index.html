@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title>qrdwtf's homepage</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="page" data-page="1">
+        <h1 class="knockout">qrdwtf</h1>
+        <p>hi! I'm Danila, 29 y.o. developer</p>
+        <p>born in russia, located in georgia</p>
+        <p>team lead in IT company</p>
+        <p>inq browser founder</p>
+    </div>
+    <div class="page" data-page="2">
+        <h1>skills</h1>
+        <p>asp.net, nodejs stacks</p>
+        <p>sql, nosql, kafka</p>
+        <p>docker, kubernetes</p>
+        <p>electron, puppeteer</p>
+    </div>
+    <div class="page" data-page="3">
+        <h1>interests</h1>
+        <p>ddd, microservices, decentralization</p>
+        <p>music, travelling, eating sweets 🍨</p>
+    </div>
+    <div class="page" data-page="4">
+        <h1>contact me</h1>
+        <p>
+            <a href="https://t.me/qrdwtf">telegram</a>
+        </p>
+    </div>
+
+    <script>
+        const body = document.body;
+        const pages = document.getElementsByClassName('page');
+        const backgrounds = [...pages].map(page =>
+            window.getComputedStyle(page).getPropertyValue('background')
+        );
+
+        document.addEventListener('scroll', () => {
+            let top = Math.max(
+                window.pageYOffset || document.documentElement.scrollTop,
+                0,
+            );
+            for (let i = 0; i < pages.length; i++) {
+                const val = Math.max(
+                    window.innerHeight * i - top,
+                    0,
+                );
+                const scale = val > 0
+                    ? 1
+                    : Math.max(
+                        0,
+                        1 + (window.innerHeight * i - top) / window.innerHeight,
+                    );
+                pages[i].style.top = `${val}px`;
+                pages[i].style.transform = `scale(${scale})`;
+
+                if (val === 0)
+                    body.style.background = backgrounds[i];
+            }
+        })
+    </script>
+</body>
+
+</html>
