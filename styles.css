@@ -7,7 +7,7 @@ body {
     font-family: 'Raleway', sans-serif;
     font-size: 24pt;
     margin: 0;
-    height: 400vh;
+    height: 500vh;
     background: #2D3047;
 }
 
@@ -47,6 +47,12 @@ body * {
 
 .page[data-page="4"] {
     top: 300vh;
+    color: #C9C9EE;
+    background: #2D3047;
+}
+
+.page[data-page="5"] {
+    top: 400vh;
     color: #2D3047;
     background: #C9C9EE;
 }
