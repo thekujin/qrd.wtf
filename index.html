@@ -33,12 +33,17 @@
         <h1>contact me</h1>
         <p>
             <a href="https://t.me/qrdwtf">telegram</a>
+            <a href="https://github.com/qrdwtf">github</a>
         </p>
+    </div>
+    <div id="down-arrow">
+        ᐯ
     </div>
 
     <script>
         const body = document.body;
         const pages = document.getElementsByClassName('page');
+        const downArrow = document.getElementById('down-arrow');
         const backgrounds = [...pages].map(page =>
             window.getComputedStyle(page).getPropertyValue('background')
         );
@@ -65,7 +70,13 @@
                 if (val === 0)
                     body.style.background = backgrounds[i];
             }
-        })
+
+            downArrow.style.opacity =  top === 0
+                ? 1
+                : 0;
+        });
+
+        downArrow.style.opacity = 1;
     </script>
 </body>
 
