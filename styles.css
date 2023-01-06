@@ -64,7 +64,7 @@ body * {
 }
 
 .sub {
-    font-size: 20pt;
+    font-size: 18pt;
     margin: 4pt 0;
 }
 
@@ -92,7 +92,7 @@ a:hover {
         font-size: 64pt;
     }
     .sub {
-        font-size: 16pt;
+        font-size: 14pt;
     }
 }
 
