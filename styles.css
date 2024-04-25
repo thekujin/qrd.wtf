@@ -86,13 +86,17 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
     body {
-        font-size: 20pt;
+        font-size: 18pt;
+        font-weight: 600;
+    }
+    b {
+        font-weight: 800;
     }
     h1 {
-        font-size: 64pt;
+        font-size: 50pt;
     }
     .sub {
-        font-size: 14pt;
+        font-size: 10pt;
     }
 }
 
