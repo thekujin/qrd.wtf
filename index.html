@@ -1,101 +1,106 @@
 <html>
+    <head>
+        <title>kujin's homepage</title>
+        <link rel="stylesheet" href="styles.css" />
 
-<head>
-    <title>qrdwtf's homepage</title>
-    <link rel="stylesheet" href="styles.css">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body>
-    <div class="page" data-page="1">
-        <h1 class="knockout">qrdwtf</h1>
-        <p>Hi! I'm Dan, 31 y.o. developer</p>
-        <p>with 11 years of experience,</p>
-        <p>individual entrepreneur.</p>
-        <p class="sub">Born in Russia, live in Georgia.</p>
-    </div>
-    <div class="page" data-page="2">
-        <h1>skills</h1>
-        <p>asp.net, rust, nodejs</p>
-        <p>http, grpc, sql, mq,</p>
-        <p>electron, puppeteer,</p>
-        <p>linux, docker.</p>
-    </div>
-    <div class="page sub" data-page="3">
-        <h1>expertise</h1>
-        <div style="text-align: left !important;">
-            <p>The most challenging was the price monitoring app.</p>
-            <p style="margin-top: 15px;">It was a complex system with multiple components:</p>
-            <p><b>Puppeteer</b> crawler executing user-defined scenarios.</p>
-            <p><b>Electron</b> application to configure websites crawling.</p>
-            <p><b>RabbitMQ</b> message broker for tasks coordination.</p>
-            <p><b>C#</b> tasks scheduler and scaped data processor.</p>
-            <p><b>Asp.net Angular</b> web app with analogs grid,</p>
-            <p>prices history and overall system management</p>
-            <p style="margin-top: 15px;">Customer has configured scenarios for 500+ websites.</p>
-            <p>Tasks: on-site search, city/store switch, catalog parse.</p>
-            <p>Performance: 300K prices per day using 20 instances.</p>
-            <p style="margin-top: 15px;">My roles on the project: <b>Team Lead</b>, <b>Architect</b>.</p>
+    <body>
+        <div class="page" data-page="1">
+            <h1 class="knockout">kujin</h1>
+            <p>Hi! I'm Dan, 32 y.o. developer</p>
+            <p>with 12 years of experience,</p>
+            <p>individual entrepreneur.</p>
+            <p class="sub">Born in Russia, live in Georgia.</p>
         </div>
-    </div>
-    <div class="page" data-page="4">
-        <h1>interests</h1>
-        <p>microservices, ddd, decentralization,</p>
-        <p style="font-size: 66%; margin-top: 15px;">skateboarding 🛹, music, travelling, eating sweets 🍨</p>
-    </div>
-    <div class="page" data-page="5">
-        <h1>contact me</h1>
-        <p>
-            <a href="https://www.linkedin.com/in/qrdwtf">linkedin</a>
-            <a href="https://github.com/qrdwtf">github</a>
-            <a href="https://t.me/qrdwtf">telegram</a>
-            <a href="https://twitter.com/qrdwtf">twitter</a>
-        </p>
-    </div>
-    <div id="down-arrow">
-        ᐯ
-    </div>
+        <div class="page" data-page="2">
+            <h1>skills</h1>
+            <p>asp.net, rust, nodejs</p>
+            <p>http, grpc, sql, mq,</p>
+            <p>electron, puppeteer,</p>
+            <p>linux, docker.</p>
+        </div>
+        <div class="page sub" data-page="3">
+            <h1>expertise</h1>
+            <div style="text-align: left !important">
+                <p>The most challenging was the price monitoring app.</p>
+                <p style="margin-top: 15px">
+                    It was a complex system with multiple components:
+                </p>
+                <p>
+                    <b>Puppeteer</b> crawler executing user-defined scenarios.
+                </p>
+                <p>
+                    <b>Electron</b> application to configure websites crawling.
+                </p>
+                <p><b>RabbitMQ</b> message broker for tasks coordination.</p>
+                <p><b>C#</b> tasks scheduler and scaped data processor.</p>
+                <p><b>Asp.net Angular</b> web app with analogs grid,</p>
+                <p>prices history and overall system management</p>
+                <p style="margin-top: 15px">
+                    Customer has configured scenarios for 500+ websites.
+                </p>
+                <p>Tasks: on-site search, city/store switch, catalog parse.</p>
+                <p>Performance: 300K prices per day using 20 instances.</p>
+                <p style="margin-top: 15px">
+                    My roles on the project: <b>Team Lead</b>, <b>Architect</b>.
+                </p>
+            </div>
+        </div>
+        <div class="page" data-page="4">
+            <h1>interests</h1>
+            <p>microservices, ddd, decentralization,</p>
+            <p style="font-size: 66%; margin-top: 15px">
+                skateboarding 🛹, music, travelling, eating sweets 🍨
+            </p>
+        </div>
+        <div class="page" data-page="5">
+            <h1>contact me</h1>
+            <p>
+                <a href="https://linkedin.com/in/thekujin">linkedin</a>
+                <a href="https://github.com/thekujin">github</a>
+                <a href="https://t.me/thekujin">telegram</a>
+                <a href="https://twitter.com/qrdwtf">twitter</a>
+            </p>
+        </div>
+        <div id="down-arrow">ᐯ</div>
 
-    <script>
-        const body = document.body;
-        const pages = document.getElementsByClassName('page');
-        const downArrow = document.getElementById('down-arrow');
-        const backgrounds = [...pages].map(page =>
-            window.getComputedStyle(page).getPropertyValue('background')
-        );
-
-        document.addEventListener('scroll', () => {
-            let top = Math.max(
-                window.pageYOffset || document.documentElement.scrollTop,
-                0,
+        <script>
+            const body = document.body;
+            const pages = document.getElementsByClassName("page");
+            const downArrow = document.getElementById("down-arrow");
+            const backgrounds = [...pages].map((page) =>
+                window.getComputedStyle(page).getPropertyValue("background"),
             );
-            for (let i = 0; i < pages.length; i++) {
-                const val = Math.max(
-                    window.innerHeight * i - top,
+
+            document.addEventListener("scroll", () => {
+                let top = Math.max(
+                    window.pageYOffset || document.documentElement.scrollTop,
                     0,
                 );
-                const scale = val > 0
-                    ? 1
-                    : Math.max(
-                        0,
-                        1 + (window.innerHeight * i - top) / window.innerHeight,
-                    );
-                pages[i].style.top = `${val}px`;
-                pages[i].style.transform = `scale(${scale})`;
+                for (let i = 0; i < pages.length; i++) {
+                    const val = Math.max(window.innerHeight * i - top, 0);
+                    const scale =
+                        val > 0
+                            ? 1
+                            : Math.max(
+                                  0,
+                                  1 +
+                                      (window.innerHeight * i - top) /
+                                          window.innerHeight,
+                              );
+                    pages[i].style.top = `${val}px`;
+                    pages[i].style.transform = `scale(${scale})`;
 
-                if (val === 0)
-                    body.style.background = backgrounds[i];
-            }
+                    if (val === 0) body.style.background = backgrounds[i];
+                }
 
-            downArrow.style.opacity =  top === 0
-                ? 1
-                : 0;
-        });
+                downArrow.style.opacity = top === 0 ? 1 : 0;
+            });
 
-        downArrow.style.opacity = 1;
-    </script>
-</body>
-
+            downArrow.style.opacity = 1;
+        </script>
+    </body>
 </html>
