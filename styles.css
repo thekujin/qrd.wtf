@@ -137,16 +137,21 @@ a:hover {
 
     &:hover + .git-stats {
         opacity: 1;
+
+        iframe {
+            display: initial;
+        }
     }
 }
 
 .git-stats {
     opacity: 0;
-    transition: 0.16s opacity ease-in-out;
+    transition: 0.24s opacity ease-in-out;
     position: relative;
     transform: scale(1.15);
 
     iframe {
+        display: none;
         border: 0;
         background-color: transparent;
         height: 260px;
