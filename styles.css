@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
 
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
     font-size: 24pt;
     margin: 0;
     height: 500vh;
     height: 500lvh;
-    background: #2D3047;
+    background: #2d3047;
 }
 
 body * {
@@ -31,36 +31,36 @@ body * {
 
 .page[data-page="1"] {
     top: 0;
-    color: #C9C9EE;
-    background: #2D3047;
+    color: #c9c9ee;
+    background: #2d3047;
 }
 
 .page[data-page="2"] {
     top: 100vh;
     top: 100lvh;
-    color: #2D3047;
-    background: #DEB841;
+    color: #2d3047;
+    background: #deb841;
 }
 
 .page[data-page="3"] {
     top: 200vh;
     top: 200lvh;
-    color: #C9C9EE;
-    background: #419D78;
+    color: #c9c9ee;
+    background: #419d78;
 }
 
 .page[data-page="4"] {
     top: 300vh;
     top: 300lvh;
-    color: #C9C9EE;
-    background: #C04ABC;
+    color: #c9c9ee;
+    background: #c04abc;
 }
 
 .page[data-page="5"] {
     top: 500vh;
     top: 500lvh;
-    color: #2D3047;
-    background: #C9C9EE;
+    color: #2d3047;
+    background: #c9c9ee;
 }
 
 .sub {
@@ -74,7 +74,9 @@ h1 {
     font-size: 100pt;
 }
 
-a, a:active, a:visited {
+a,
+a:active,
+a:visited {
     color: inherit;
     text-decoration: none;
     border-bottom: 1px solid;
@@ -101,11 +103,13 @@ a:hover {
 }
 
 .knockout {
-    background: radial-gradient(circle,
-            rgba(192, 74, 188, 1) 0%,
-            rgba(201, 201, 238, 1) 33%,
-            rgba(222, 184, 65, 1) 67%,
-            rgba(65, 157, 120, 1) 100%);
+    background: radial-gradient(
+        circle,
+        rgba(192, 74, 188, 1) 0%,
+        rgba(201, 201, 238, 1) 33%,
+        rgba(222, 184, 65, 1) 67%,
+        rgba(65, 157, 120, 1) 100%
+    );
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     animation: Gradient 12s infinite;
@@ -119,10 +123,39 @@ a:hover {
     left: 50%;
     transform: translateX(-50%) scaleX(1.8);
     font-size: 32px;
-    color: #C9C9EE;
+    color: #c9c9ee;
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.5s;
+}
+
+#git-stats-link {
+    border-bottom: none;
+    font-size: 75%;
+    font-family: monospace;
+    margin-top: 12px;
+
+    &:hover + .git-stats {
+        opacity: 1;
+    }
+}
+
+.git-stats {
+    opacity: 0;
+    transition: 0.16s opacity ease-in-out;
+    position: relative;
+    transform: scale(1.15);
+
+    iframe {
+        border: 0;
+        background-color: transparent;
+        height: 260px;
+        width: 100%;
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 @-webkit-keyframes Gradient {
