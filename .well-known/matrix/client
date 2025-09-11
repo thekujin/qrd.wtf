@@ -1,6 +1,9 @@
 {
     "cc.etke.synapse-admin": {
-        "asManagedUsers": [],
+        "asManagedUsers": [
+            "^@telegrambot:kujin\\.dev$",
+            "^@telegram_[a-zA-Z0-9]+:kujin\\.dev$"
+        ],
         "menu": [],
         "restrictBaseUrl": [
             "https://matrix.kujin.dev"
