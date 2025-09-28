@@ -6,6 +6,7 @@ body {
     justify-content: center;
     font-family: "Raleway", sans-serif;
     font-size: 24pt;
+    line-height: 1.25;
     margin: 0;
     height: 500vh;
     height: 500lvh;
@@ -31,7 +32,7 @@ body * {
 
 .page[data-page="1"] {
     top: 0;
-    color: #c9c9ee;
+    color: #e7e7ff;
     background: #2d3047;
 }
 
@@ -45,14 +46,14 @@ body * {
 .page[data-page="3"] {
     top: 200vh;
     top: 200lvh;
-    color: #c9c9ee;
+    color: #e7e7ff;
     background: #419d78;
 }
 
 .page[data-page="4"] {
     top: 300vh;
     top: 300lvh;
-    color: #c9c9ee;
+    color: #e7e7ff;
     background: #c04abc;
 }
 
@@ -60,12 +61,7 @@ body * {
     top: 500vh;
     top: 500lvh;
     color: #2d3047;
-    background: #c9c9ee;
-}
-
-.sub {
-    font-size: 18pt;
-    margin: 4pt 0;
+    background: #e7e7ff;
 }
 
 h1 {
@@ -86,7 +82,7 @@ a:hover {
     border-bottom: 2px solid;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 780px) {
     body {
         font-size: 16pt;
         font-weight: 600;
@@ -111,6 +107,7 @@ a:hover {
         rgba(65, 157, 120, 1) 100%
     );
     -webkit-text-fill-color: transparent;
+    background-clip: text;
     -webkit-background-clip: text;
     animation: Gradient 12s infinite;
     -webkit-animation: Gradient 12s infinite;
@@ -123,47 +120,26 @@ a:hover {
     left: 50%;
     transform: translateX(-50%) scaleX(1.8);
     font-size: 32px;
-    color: #c9c9ee;
+    color: #e7e7ff;
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.5s;
 }
 
-#git-stats-link {
-    border-bottom: none;
-    font-size: 75%;
-    font-family: monospace;
-    margin-top: 12px;
-
-    &:hover + .git-stats {
-        opacity: 1;
-
-        iframe {
-            display: initial;
-        }
-    }
+iframe.git-stats {
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 32pt 0 0;
+    width: 780px;
+    max-width: 90vw;
+    height: 264px;
+    border-radius: 16px;
+    border: 1px solid #e7e7ff;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.git-stats {
-    opacity: 0;
-    transition: 0.24s opacity ease-in-out;
-    position: relative;
-    transform: scale(1.15);
-
-    iframe {
-        display: none;
-        border: 0;
-        background-color: transparent;
-        height: 260px;
-        width: 100%;
-        position: absolute;
-        bottom: 32px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-@-webkit-keyframes Gradient {
+@keyframes Gradient {
     0% {
         background-size: 50%;
         background-position: 30% 50%;
