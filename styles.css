@@ -140,16 +140,15 @@ a:hover {
     pointer-events: none;
     position: absolute;
     color: #2d3047;
-    background-color: #e7e7ffc0;
-    top: -22px;
-    left: 0;
+    background-color: #e7e7ff;
+    bottom: -36px;
+    left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
-    padding: 12px 24px;
+    padding: 8px 16px;
     transition: all 0.2s ease-in-out;
+    font-size: 16px;
     border-radius: 100px;
-    /* glass effect */
-    backdrop-filter: blur(4px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
