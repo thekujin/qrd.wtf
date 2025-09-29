@@ -126,6 +126,37 @@ a:hover {
     transition: opacity 0.5s;
 }
 
+.ie-data {
+    text-decoration: underline;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    margin: -4px -24px;
+    padding: 4px 24px;
+}
+
+.ie-data > .hover {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    color: #2d3047;
+    background-color: #e7e7ffc0;
+    top: -22px;
+    left: 0;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    padding: 12px 24px;
+    transition: all 0.2s ease-in-out;
+    border-radius: 100px;
+    /* glass effect */
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ie-data:hover > .hover {
+    opacity: 1;
+}
+
 iframe.git-stats {
     border: 0;
     background-color: rgba(255, 255, 255, 0.5);
