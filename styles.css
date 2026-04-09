@@ -8,8 +8,8 @@ body {
     font-size: 24pt;
     line-height: 1.25;
     margin: 0;
-    height: 500vh;
-    height: 500lvh;
+    height: 600vh;
+    height: 600lvh;
     background: #2d3047;
 }
 
@@ -60,6 +60,13 @@ body * {
 .page[data-page="5"] {
     top: 500vh;
     top: 500lvh;
+    color: #e7e7ff;
+    background: #2d3047;
+}
+
+.page[data-page="6"] {
+    top: 600vh;
+    top: 600lvh;
     color: #2d3047;
     background: #e7e7ff;
 }
