@@ -1,204 +1,380 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;1,100&display=swap");
+
+/* ─── Tokens ─── */
+
+:root {
+    --bg: #eef1f5;
+    --ink: #0d0d0d;
+    --muted: #666666;
+    --border: #e0e0e0;
+    --accent: #b4ff3c;
+}
+
+/* ─── Base ─── */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     font-family: "Raleway", sans-serif;
-    font-size: 24pt;
-    line-height: 1.25;
-    margin: 0;
-    height: 600vh;
-    height: 600lvh;
-    background: #2d3047;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.6;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
 }
 
-body * {
-    margin: 0;
-    text-align: center;
-}
+/* ─── Header ─── */
 
-.page {
-    height: 100vh;
-    height: 100lvh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 10pt;
-    box-sizing: border-box;
+header {
     position: fixed;
-}
-
-.page[data-page="1"] {
-    top: 0;
-    color: #e7e7ff;
-    background: #2d3047;
-}
-
-.page[data-page="2"] {
-    top: 100vh;
-    top: 100lvh;
-    color: #2d3047;
-    background: #deb841;
-}
-
-.page[data-page="3"] {
-    top: 200vh;
-    top: 200lvh;
-    color: #e7e7ff;
-    background: #419d78;
-}
-
-.page[data-page="4"] {
-    top: 300vh;
-    top: 300lvh;
-    color: #e7e7ff;
-    background: #c04abc;
-}
-
-.page[data-page="5"] {
-    top: 500vh;
-    top: 500lvh;
-    color: #e7e7ff;
-    background: #2d3047;
-}
-
-.page[data-page="6"] {
-    top: 600vh;
-    top: 600lvh;
-    color: #2d3047;
-    background: #e7e7ff;
-}
-
-h1 {
-    vertical-align: middle;
-    font-weight: 100;
-    font-size: 100pt;
-}
-
-a,
-a:active,
-a:visited {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid;
-}
-
-a:hover {
-    border-bottom: 2px solid;
-}
-
-@media only screen and (max-width: 780px) {
-    body {
-        font-size: 16pt;
-        font-weight: 600;
-    }
-    b {
-        font-weight: 800;
-    }
-    h1 {
-        font-size: 42pt;
-    }
-    .sub {
-        font-size: 8pt;
-    }
-}
-
-.knockout {
-    background: radial-gradient(
-        circle,
-        rgba(192, 74, 188, 1) 0%,
-        rgba(201, 201, 238, 1) 33%,
-        rgba(222, 184, 65, 1) 67%,
-        rgba(65, 157, 120, 1) 100%
-    );
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    animation: Gradient 12s infinite;
-    -webkit-animation: Gradient 12s infinite;
-    -moz-animation: Gradient 12s infinite;
-}
-
-#down-arrow {
-    position: fixed;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%) scaleX(1.8);
-    font-size: 32px;
-    color: #e7e7ff;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-.ie-data {
-    text-decoration: underline;
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
-    margin: -4px -24px;
-    padding: 4px 24px;
-}
-
-.ie-data > .hover {
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    color: #2d3047;
-    background-color: #e7e7ff;
-    bottom: -36px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    white-space: nowrap;
-    padding: 8px 16px;
-    transition: all 0.2s ease-in-out;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 28px;
+    width: calc(100% - 40px);
+    border-radius: 18px;
+    border: 1px solid transparent;
+    background: transparent;
+    transition:
+        background 0.35s,
+        border-color 0.35s,
+        backdrop-filter 0.35s,
+        box-shadow 0.35s;
+}
+
+header.scrolled {
+    background: rgba(238, 241, 245, 0.72);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+}
+
+.wordmark {
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.nav-cta {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-cta:hover {
+    color: var(--ink);
+}
+
+/* ─── Hero ─── */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-divider {
+    border: none;
+    width: 40px;
+    height: 3px;
+    background: var(--border);
+    margin: 0 56px;
+}
+
+.hero {
+    padding: 172px 56px 64px;
+}
+
+.hero-services {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1em;
+    row-gap: 0;
+    line-height: 1;
+    text-indent: -0.3em;
+}
+
+.hero-services span {
+    font-size: clamp(44px, 8vw, 112px);
+    font-weight: 100;
+    letter-spacing: -0.03em;
+    opacity: 0;
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-services span:nth-child(1) {
+    animation-delay: 0.05s;
+}
+.hero-services span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.hero-services span:nth-child(3) {
+    animation-delay: 0.35s;
+}
+.hero-services span:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+.hero-team {
+    margin-top: 8px;
     font-size: 16px;
-    border-radius: 100px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: 300;
+    color: var(--ink);
+    max-width: 400px;
+    opacity: 0;
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards;
 }
 
-.ie-data:hover > .hover {
-    opacity: 1;
+/* ─── Services ─── */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 48px;
+    padding: 0 56px;
 }
 
-iframe.git-stats {
-    border: 0;
-    background-color: rgba(255, 255, 255, 0.5);
-    margin: 32pt 0 0;
-    width: 780px;
-    max-width: 90vw;
-    height: 264px;
-    border-radius: 16px;
-    border: 1px solid #e7e7ff;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.service-col {
+    padding: 44px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-@keyframes Gradient {
-    0% {
-        background-size: 50%;
-        background-position: 30% 50%;
+.service-col h3 {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2px;
+}
+
+.service-col p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--ink);
+}
+
+.service-col .tech {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    color: var(--muted);
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+/* ─── Showcase ─── */
+
+.section-label {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+    display: block;
+}
+
+.showcase {
+    padding: 64px 56px;
+}
+
+.project {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+    transition: opacity 0.2s;
+}
+
+.project:hover {
+    opacity: 0.55;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    text-indent: -0.3em;
+}
+
+.project-header h3 {
+    font-size: clamp(40px, 6.5vw, 92px);
+    font-weight: 100;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.project-arrow {
+    font-size: 32px;
+    font-weight: 100;
+    flex-shrink: 0;
+}
+
+.project-type {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 16px;
+}
+
+.project-desc {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 640px;
+    margin-top: 16px;
+}
+
+/* ─── Approach ─── */
+
+.approach {
+    background: var(--bg);
+    padding: 72px 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.approach h2 {
+    font-size: clamp(24px, 3.8vw, 52px);
+    font-weight: 100;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    max-width: 720px;
+}
+
+.approach p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--muted);
+    max-width: 460px;
+}
+
+/* ─── Footer ─── */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 72px 56px 56px;
+    gap: 48px;
+}
+
+footer h2 {
+    font-size: clamp(40px, 6vw, 84px);
+    font-weight: 100;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+}
+
+.footer-tagline {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--muted);
+    margin-top: 16px;
+}
+
+.footer-email {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+}
+
+.footer-email:hover {
+    border-color: var(--ink);
+}
+
+.legal {
+    font-size: 13px;
+    font-weight: 300;
+    color: #aaaaaa;
+    line-height: 1.7;
+}
+
+/* ─── Tablet ─── */
+
+@media only screen and (max-width: 1100px) and (min-width: 769px) {
+    .services {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 0;
     }
 
-    25% {
-        background-size: 50%;
-        background-position: 30% 20%;
+    .service-col:nth-child(3),
+    .service-col:nth-child(4) {
+        border-top: none;
+    }
+}
+
+/* ─── Mobile ─── */
+
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 18px 24px;
     }
 
-    50% {
-        background-size: 80%;
-        background-position: 80% 20%;
+    .hero {
+        padding: 110px 24px 52px;
     }
 
-    75% {
-        background-size: 50%;
-        background-position: 50% 20%;
+    .services {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        padding: 0 24px;
     }
 
-    100% {
-        background-size: 50%;
-        background-position: 30% 50%;
+    .service-col {
+        padding: 28px 0;
+    }
+
+    .showcase {
+        padding: 48px 24px;
+    }
+
+    .approach {
+        padding: 60px 24px;
+    }
+
+    footer {
+        padding: 60px 24px 44px;
+        gap: 36px;
     }
 }

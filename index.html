@@ -1,121 +1,137 @@
-<html>
+<!doctype html>
+<html lang="en">
     <head>
-        <title>kujin's homepage</title>
+        <title>kujin.dev — Software & Design</title>
         <link rel="stylesheet" href="styles.css" />
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Full-cycle software development and design — web, backend, desktop. AI-augmented at every stage, human-verified at every step."
+        />
     </head>
 
     <body>
-        <div class="page" data-page="1">
-            <h1 class="knockout">Hi, I'm Dan.</h1>
-            <p>I provide programming services for:</p>
-            <p>Web Apps, Integrations, Cross-Platform Desktop.</p>
-            <p style="font-size: 67%; margin-top: 24pt">
-                Focused on UX while aligning with business priorities since
-                2012.
+        <header>
+            <a href="/" class="wordmark">kujin team</a>
+            <a href="#contact" class="nav-cta">Get in touch</a>
+        </header>
+
+        <section class="hero">
+            <div class="hero-services">
+                <span>Idea,</span>
+                <span>Design,</span>
+                <span>Build,</span>
+                <span>Ship.</span>
+            </div>
+            <p class="hero-team">
+                A small, senior team — who own the work end to end.
             </p>
-            <p style="font-size: 67%">
-                Individual Entrepreneur
-                <span class="ie-data"
-                    >ID 304658136<span class="hover"
-                        >Legal Business Name:
-                        <b>Individual Entrepreneur DANILA ALEKSEEV</b></span
-                    ></span
+        </section>
+
+        <hr class="section-divider" />
+
+        <section class="services">
+            <div class="service-col">
+                <h3>Web</h3>
+                <p>
+                    SPAs, dashboards, platforms — from landing page to complex
+                    enterprise app.
+                </p>
+                <p class="tech">TypeScript · Angular · SolidJS</p>
+            </div>
+            <div class="service-col">
+                <h3>Backend</h3>
+                <p>
+                    APIs, microservices, real-time pipelines, third-party
+                    integrations.
+                </p>
+                <p class="tech">
+                    C# · Rust · SQL · Kafka · Redis · REST · gRPC
+                </p>
+            </div>
+            <div class="service-col">
+                <h3>Desktop</h3>
+                <p>
+                    Cross-platform apps — native performance, consistent UX on
+                    any OS.
+                </p>
+                <p class="tech">Tauri · Windows · macOS · Linux</p>
+            </div>
+            <div class="service-col">
+                <h3>Design</h3>
+                <p>
+                    Product and interface design — from early wireframes to
+                    polished, dev-ready UI.
+                </p>
+                <p class="tech">Figma · Design Systems · Prototyping</p>
+            </div>
+        </section>
+
+        <hr class="section-divider" />
+
+        <section class="showcase">
+            <p class="section-label">Showcase</p>
+            <a href="https://kombiner.app" target="_blank" class="project">
+                <div class="project-header">
+                    <h3>Kombiner</h3>
+                    <span class="project-arrow">↗</span>
+                </div>
+                <p class="project-type">
+                    Desktop App &nbsp;·&nbsp; Tauri, Rust, TypeScript
+                    &nbsp;·&nbsp; macOS & Windows
+                </p>
+                <p class="project-desc">
+                    Music library management for DJs. Unifies Spotify, Tidal,
+                    Beatport and local files in one pipeline — automatic BPM,
+                    key and metadata enrichment, one-click track acquisition,
+                    export to Rekordbox and Traktor.
+                </p>
+            </a>
+        </section>
+
+        <hr class="section-divider" />
+
+        <section class="approach">
+            <h2>
+                AI-augmented at every stage.<br />Human-verified at every step.
+            </h2>
+            <p>
+                We apply AI from architecture through deployment — and verify
+                every output ourselves.<br />No hallucinations shipped.
+            </p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <footer id="contact">
+            <div class="footer-main">
+                <h2>Building<br />something?</h2>
+                <p class="footer-tagline">Let's talk — drop us a line.</p>
+                <a href="mailto:dan@kujin.dev" class="footer-email"
+                    >dan@kujin.dev</a
                 >
-                in Georgia.
+            </div>
+            <p class="legal">
+                © <span id="year"></span> kujin.dev<br />
+                Individual Entrepreneur Danila Alekseev · ID 304658136 · Georgia
             </p>
-        </div>
-        <div class="page" data-page="2">
-            <h1>languages</h1>
-            <p>c#, rust, ts/js, sql,</p>
-            <p>html, css, scss, json, yaml</p>
-        </div>
-        <div class="page" data-page="3">
-            <h1>technologies</h1>
-            <p>asp.net, axum, angular,</p>
-            <p>postgresql, mssql server, redis,</p>
-            <p>rest, grpc, kafka, rabbitmq,</p>
-            <p>tauri, electron, puppeteer,</p>
-            <p>ci/cd, linux, docker.</p>
-        </div>
-        <div class="page" data-page="4">
-            <h1>projects</h1>
-            <p>
-                <a href="https://kombiner.app" target="_blank">Kombiner</a>:
-                companion app for DJs
-            </p>
-        </div>
-        <div class="page" data-page="5">
-            <h1>interests</h1>
-            <p>microservices, decentralization,</p>
-            <p style="font-size: 67%">
-                skateboarding 🛹, music 🎧, travelling 🧳
-            </p>
-        </div>
-        <div class="page" data-page="6">
-            <h1>contact me</h1>
-            <p>
-                <a href="https://linkedin.com/in/thekujin">linkedin</a>
-                &nbsp;
-                <a href="https://github.com/thekujin">github</a>
-                &nbsp;
-                <a href="https://matrix.to/#/@dan:kujin.dev">matrix</a>
-                &nbsp;
-                <a href="https://t.me/thekujin">telegram</a>
-                &nbsp;
-                <a href="https://x.com/thekujindev">twitter</a>
-            </p>
-            <p>
-                <iframe
-                    src="https://stats.kujin.dev"
-                    class="git-stats"
-                ></iframe>
-            </p>
-        </div>
-        <div id="down-arrow">ᐯ</div>
+        </footer>
 
         <script>
-            const body = document.body;
-            const pages = document.getElementsByClassName("page");
-            const downArrow = document.getElementById("down-arrow");
-            const backgrounds = [...pages].map((page) =>
-                window.getComputedStyle(page).getPropertyValue("background"),
-            );
-
-            document.addEventListener("scroll", () => {
-                let top = Math.max(
-                    window.pageYOffset || document.documentElement.scrollTop,
-                    0,
-                );
-                for (let i = 0; i < pages.length; i++) {
-                    const val = Math.max(window.innerHeight * i - top, 0);
-                    const scale =
-                        val > 0
-                            ? 1
-                            : Math.max(
-                                  0,
-                                  1 +
-                                      (window.innerHeight * i - top) /
-                                          window.innerHeight,
-                              );
-                    pages[i].style.top = `${val}px`;
-                    pages[i].style.transform = `scale(${scale})`;
-
-                    if (val === 0) body.style.background = backgrounds[i];
-                }
-
-                downArrow.style.opacity = top === 0 ? 1 : 0;
+            document.documentElement.style.opacity = "0";
+            document.fonts.ready.then(() => {
+                document.documentElement.style.transition = "opacity 0.3s ease";
+                document.documentElement.style.opacity = "1";
             });
 
-            downArrow.style.opacity = 1;
-
-            Array.from(document.querySelectorAll("iframe")).forEach(
-                (iframe) => {
-                    iframe.src = iframe.src + "?" + new Date().getTime();
-                },
-            );
+            document.getElementById("year").textContent =
+                new Date().getFullYear();
+            const header = document.querySelector("header");
+            window.addEventListener("scroll", () => {
+                header.classList.toggle("scrolled", window.scrollY > 20);
+            });
         </script>
     </body>
 </html>
