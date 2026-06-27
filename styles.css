@@ -355,6 +355,10 @@ footer h2 {
         padding: 110px 24px 52px;
     }
 
+    .section-divider {
+        margin: 0 24px;
+    }
+
     .services {
         grid-template-columns: 1fr;
         column-gap: 0;
